@@ -1,0 +1,179 @@
+*{
+    margin:0px;
+    padding:0px;
+    
+    box-sizing: border-box;
+    
+
+    
+}
+html,body{
+    width: 100%;
+    height: 100%;
+}
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    background: #f0f2f5;
+}
+
+/* Waves container */
+.wave-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    z-index: -1;
+}
+
+/* Styling each wave */
+.wave {
+    position: absolute;
+    width: 200%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    animation: waveAnimation 8s infinite linear;
+}
+
+.wave:nth-child(1) {
+    top: 0;
+    opacity: 0.6;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%2399ccff" fill-opacity="0.6" d="M0,160L48,181.3C96,203,192,245,288,245.3C384,245,480,203,576,170.7C672,139,768,117,864,128C960,139,1056,181,1152,213.3C1248,245,1344,267,1392,277.3L1440,288L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
+}
+
+.wave:nth-child(2) {
+    top: 20px;
+    opacity: 0.4;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%3399ccff" fill-opacity="0.4" d="M0,160L48,170.7C96,181,192,203,288,224C384,245,480,267,576,250.7C672,235,768,181,864,170.7C960,160,1056,192,1152,218.7C1248,245,1344,267,1392,277.3L1440,288L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
+    animation-duration: 10s;
+}
+
+.wave:nth-child(3) {
+    top: 40px;
+    opacity: 0.2;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%337abff" fill-opacity="0.2" d="M0,256L48,234.7C96,213,192,171,288,165.3C384,160,480,192,576,197.3C672,203,768,181,864,170.7C960,160,1056,160,1152,170.7C1248,181,1344,203,1392,213.3L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
+    animation-duration: 12s;
+}
+
+/* Animation for waves */
+@keyframes waveAnimation {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+/* Login container styling */
+.container {
+    text-align: center;
+    max-width: 400px;
+    padding: 2em;
+    background: rgb(203, 199, 220);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    z-index: 1;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 1em;
+}
+
+button {
+    display: block;
+    width: 100%;
+    margin: 1em 0;
+    padding: 0.8em;
+    font-size: 1em;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.signup-btn {
+    background-color: #28a745;
+}
+
+.signup-btn:hover {
+    background-color: #218838;
+}
+
+.login-btn {
+    background-color: #007bff;
+}
+
+.login-btn:hover {
+    background-color: #0069d9;
+}
+.box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.sign{
+    display: block;
+    justify-content: center;
+    align-items: center;
+    background-color: bisque
+}
+.auth-container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.auth-container h2 {
+    font-family: 'Caprasimo', sans-serif;
+    margin-bottom: 20px;
+}
+
+.auth-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.auth-container label {
+    text-align: left;
+    margin-bottom: 5px;
+}
+
+.auth-container input {
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.auth-container button {
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.auth-container button:hover {
+    background-color: #45a049;
+}
+
+.auth-container p {
+    margin-top: 15px;
+}
+
+
+

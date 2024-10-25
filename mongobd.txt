@@ -1,0 +1,19 @@
+//schema flexibility:No SQL database often allow for a flexxible scheme, meaning
+you can store
+
+
+
+
+MONOGOBD cluster
+
+
+// steps to create a todo app
+1. welcome page showing login or sign up page with animation back side 
+fancy animated todo rendering 
+
+2.creating routes for sign and login application
+3. makeing end point  todo page
+4. database i am gng use is postgress Sql 
+5. authetiaction  for user
+6. every user logginedf is given a token
+ 

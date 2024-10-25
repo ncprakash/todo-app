@@ -1,0 +1,6 @@
+1 i have to use brcypt npm to hash the password //done 
+2. login page issue debuging //done
+3. edit option in todo page
+4. and save button if the person with key clicks the save button then it ll save the data in todo table
+5. i have to generate token to user when ever they login in  which should show there saved content
+

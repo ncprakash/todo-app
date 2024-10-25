@@ -1,0 +1,131 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do App</title>
+    <link rel="stylesheet" href="/styles.css"> <!-- Main CSS -->
+    <link rel="stylesheet" href="/public/style/todo.css"> 
+</head>
+<body>
+    <%- include("partials/homepage") %>
+    <div class="container22">
+        <div class="container3">
+            <h2>To-Do List</h2>
+            <div class="input-container1">
+                <input type="text" id="taskInput" placeholder="Add a new task...">
+                <button id="addTaskBtn" onclick="addlist()">Add Task</button>
+            </div>
+            <!-- This is where the tasks will be displayed -->
+            <ul id="taskList"></ul> <!-- Un-commented the task list -->
+        </div>
+        <!-- <div class="position">
+            <form method="post" action="/todo" >
+            <button class="save-btn22">Save</button>
+        </form>
+        </div> -->
+    </div>
+
+
+    <script >
+        function addlist() {
+            const taskInput = document.getElementById("taskInput");
+            const task = taskInput.value.trim();
+
+            if (task === "") {
+                alert("Please enter a task.");
+                return;
+            }
+
+            // Create a new list item
+            const li = document.createElement("li");
+            li.className = "task-item";
+
+            // Create a checkbox
+            const input = document.createElement("input");
+            input.type = "checkbox";
+
+            // Create a label
+            const label = document.createElement("label");
+            label.textContent = task;
+
+            // Create Edit button
+            const editButton = document.createElement("button");
+            editButton.className = "edit-btn";
+            editButton.textContent = "Edit";
+            editButton.onclick = function() {
+                enableEdit(editButton);
+            };
+
+            // Create Save button
+            const saveButton = document.createElement("button");
+            saveButton.className = "save-btn";
+            saveButton.textContent = "Save";
+            saveButton.style.display = "none"; // Initially hidden
+            saveButton.onclick = function() {
+                saveEdit(saveButton);
+            };
+
+            // Create a delete button
+            const deleteButton = document.createElement("button");
+            deleteButton.className = "delete-btn";
+            deleteButton.textContent = "Delete";
+            deleteButton.onclick = function() {
+                deleteTask(deleteButton);
+            };
+
+            // Append elements to the list item
+            li.appendChild(input);
+            li.appendChild(label);
+            li.appendChild(editButton);
+            li.appendChild(saveButton);
+            li.appendChild(deleteButton);
+
+            // Append the list item to the task list
+            const taskList = document.getElementById("taskList");
+            taskList.appendChild(li);
+
+            // Clear the input field after adding the task
+            taskInput.value = "";
+        }
+
+        function enableEdit(button) {
+            const li = button.parentElement;
+            const label = li.querySelector("label");
+            const saveButton = li.querySelector(".save-btn");
+
+            // Change label to editable input
+            const input = document.createElement("input");
+            input.type = "text";
+            input.value = label.textContent;
+            label.replaceWith(input);
+
+            // Toggle buttons visibility
+            button.style.display = "none"; // Hide "Edit" button
+            saveButton.style.display = "inline"; // Show "Save" button
+        }
+
+        function saveEdit(button) {
+            const li = button.parentElement;
+            const input = li.querySelector("input[type='text']");
+            const editButton = li.querySelector(".edit-btn");
+
+            // Convert input back to label
+            const label = document.createElement("label");
+            label.textContent = input.value;
+            input.replaceWith(label);
+
+            // Toggle buttons visibility
+            button.style.display = "none"; // Hide "Save" button
+            editButton.style.display = "inline"; // Show "Edit" button
+        }
+
+        function deleteTask(button) {
+            const li = button.parentElement;
+            li.remove();
+        }
+        
+    </script>
+</body>
+</html>

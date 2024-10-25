@@ -1,0 +1,14 @@
+<%- include("partials/homepage") %>
+<div class="auth-container">
+    <h2>Login</h2>
+    <form action="/login" method="POST">
+        <label for="login-email">user:</label>
+        <input type="text" id="login-email" name="username1" required>
+
+        <label for="login-password">Password:</label>
+        <input type="password" id="login-password" name="password1" required>
+
+        <button type="submit">Login</button>
+    </form>
+    <p>Don't have an account? <a href="/signin">Sign Up</a></p>
+</div>
